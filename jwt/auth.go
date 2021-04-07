@@ -126,6 +126,7 @@ func New(store res.Storer, opts ...Option) *Auther {
 		signingMethod:    jwt.SigningMethodHS512,
 		signingFunc:      NewWithClaims,
 		keyFunc:          KeyFuncCallback,
+		tokenFunc:        GetBearerToken,
 		parseClaimsFunc:  a.parseTokenClaims,
 		parseRefreshFunc: a.parseRefreshClaims,
 	}
